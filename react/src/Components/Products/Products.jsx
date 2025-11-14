@@ -6,9 +6,11 @@ import Cards from '../Cards/Cards';
 import Button from '../Button/Button';
 
 const Products = () => {
-    const categories = ['All', 'Fruits', 'Vegetables', 'Dairy', 'SeaFood'];
+    // Updated categories for bakery/dessert theme
+    const categories = ['All', 'Cakes', 'Pastries', 'Cookies', 'Breads'];
     const [activeTab, setActiveTab] = useState('All')
 
+    // Filter products based on category
     let filteredItems = activeTab === 'All' ? ProductList : ProductList.filter(item => item.category === activeTab);
 
     const renderCards = filteredItems.slice(0,8).map(product =>{
@@ -28,7 +30,7 @@ const Products = () => {
                 {categories.map(category => {
                     return (
                         <button key={category} 
-                        className={`px-5 py-2 cursor-pointer text-lg rounded-lg ${activeTab === category ? 'bg-gradient-to-b from-orange-400 to-orange-500 text-white' : 'bg-zinc-100'}`}
+                        className={`px-5 py-2 cursor-pointer text-lg rounded-lg ${activeTab === category ? 'bg-gradient-to-b from-rose-400 to-rose-500 text-white' : 'bg-zinc-100'}`}
                         onClick={() => setActiveTab(category)}>
                             {category}
                         </button>

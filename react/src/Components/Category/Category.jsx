@@ -50,20 +50,20 @@ export default Category
 const category = [
     {
         id: 1,
-        title: 'Fruits & Veggies',
-        description: 'Fresh, organic produce sourced daily from local farms. Explore a wide range of seasonal fruits and crisp vegetables.',
+        title: 'Cakes & Pastries',
+        description: 'Soft, sweet, and freshly baked delights. Explore a variety of cakes, cupcakes, and pastries to satisfy every craving.',
         image: FruitsCat
     },
     {
         id: 2,
-        title: 'Dairy & Eggs',
-        description: 'Wholesome dairy products and free-range eggs. From creamy milk and yogurt to artisanal cheeses.',
+        title: 'Cookies & Biscuits',
+        description: 'Handcrafted cookies and buttery biscuits baked daily. Perfect for snacking or gifting to your loved ones.',
         image: DairyCat
     },
     {
         id: 3,
-        title: 'Meat & SeaFood',
-        description: 'High-quality, responsibly sourced meat and seafood. Choose from fresh cuts, marinated options, and more.',
+        title: 'Breads & Buns',
+        description: 'Artisan breads, soft buns, and freshly baked rolls. Enjoy the comforting aroma of bakery-fresh goodness.',
         image: SeaFoodCat
     }
 ]

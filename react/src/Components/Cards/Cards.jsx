@@ -12,7 +12,7 @@ const Cards = ({image, name, price}) => {
             <span className='text-3xl text-zinc-300 cursor-pointer'>
                 <FaHeart/>
             </span>
-            <button className='bg-linear-to-b from-orange-400 to-orange-500 text-white text-xl px-4 py-3 rounded-lg cursor-pointer'>
+            <button className='bg-linear-to-b from-rose-400 to-rose-500 text-white text-xl px-4 py-3 rounded-lg cursor-pointer'>
                 <FaPlus/>
             </button>
         </div>

@@ -1,8 +1,7 @@
 import React from 'react'
 import Heading from '../Heading/Heading'
 import { FaHeart, FaLeaf, FaShieldAlt, FaSeedling } from "react-icons/fa";
-import Basket from '../../Assets/basket-full-vegetables.png'
-
+import Basket from '../../Assets/basket-full-vegetables.png' // keep your image
 
 const Values = () => {
 
@@ -10,7 +9,7 @@ const Values = () => {
     return(
         <div key={item.id} className='flex md:flex-row-reverse items-center gap-7'>
             <div>
-                <span className='flex justify-center items-center text-3xl text-white bg-gradient-to-b from-orange-400 to-orange-500 w-15 h-15 rounded-full'>{item.icon}</span>
+                <span className='flex justify-center items-center text-3xl text-white bg-gradient-to-b from-rose-400 to-rose-500 w-15 h-15 rounded-full'>{item.icon}</span>
             </div>
             <div className='md:text-right'>
                 <h3 className='text-zinc-800 text-3xl font-bold'>{item.title}</h3>
@@ -23,7 +22,7 @@ const Values = () => {
     return(
         <div key={item.id} className='flex items-center gap-7'>
             <div>
-                <span className='flex justify-center items-center text-3xl text-white bg-gradient-to-b from-orange-400 to-orange-500 w-15 h-15 rounded-full'>{item.icon}</span>
+                <span className='flex justify-center items-center text-3xl text-white bg-gradient-to-b from-rose-400 to-rose-500 w-15 h-15 rounded-full'>{item.icon}</span>
             </div>
             <div>
                 <h3 className='text-zinc-800 text-3xl font-bold'>{item.title}</h3>
@@ -40,20 +39,16 @@ const Values = () => {
                 <div className='flex md:flex-row flex-col gap-15 md:gap-5 mt-15'>
 
                     {/* left values*/}
-
                     <div className='md:min-h-100 gap-15 flex flex-col justify-between'>
                         {leftValues}
                     </div>
 
                     {/* center */}  
-
                     <div className='md:flex w-1/2 hidden'>
                         <img src={Basket}/>
                     </div>
 
-
                     {/* right values*/}
-
                     <div className='md:min-h-100 gap-15 flex flex-col justify-between'>
                         {rightValues}
                     </div>
@@ -68,27 +63,26 @@ export default Values
 const value = [
     { 
         id: 1, 
-        title: 'Trust', 
-        para: 'It is a long established fact that a reader will be distracted by the readable.', 
+        title: 'Love in Every Bite', 
+        para: 'Each treat is handcrafted with care and sprinkled with love to make every bite delightful.', 
         icon: <FaHeart/> 
     },
     { 
         id: 2, 
-        title: 'Always Fresh', 
-        para: 'It is a long established fact that a reader will be distracted by the readable.', 
+        title: 'Freshly Baked', 
+        para: 'Our cakes, pastries, and breads are baked daily to ensure maximum freshness and flavor.', 
         icon: <FaLeaf/> 
     },
     { 
         id: 3, 
-        title: 'Food Safety', 
-        para: 'Quality you can trust, delivered. Your health, our mission. Safety in every bite.', 
+        title: 'Premium Ingredients', 
+        para: 'We use only the finest ingredients—real butter, fresh fruits, and high-quality chocolate in every creation.', 
         icon: <FaShieldAlt/> 
     },
     { 
         id: 4, 
-        title: '100% Organic', 
-        para: 'Fresh from farm to fork, naturally. Eat clean, live green. Pure food, pure joy.', 
+        title: 'Handmade with Care', 
+        para: 'Every dessert is carefully crafted by our skilled bakers to bring joy and sweetness to your day.', 
         icon: <FaSeedling/> 
     }
 ]
-

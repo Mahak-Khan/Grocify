@@ -1,5 +1,5 @@
 import React from 'react'
-import Grocery from '../../Assets/grocery.png'
+import Grocery from '../../Assets/Bakery.png' // change to your bakery hero image
 import Button from '../Button/Button'
 
 const Hero = () => {
@@ -10,14 +10,19 @@ const Hero = () => {
             {/* Hero Content */}
 
             <div className='flex-1'>
-                <span className='bg-orange-100 text-orange-500 rounded-full text-lg px-5 py-2'>Export Best Quality...</span>
+                <span className='bg-rose-100 text-rose-500 rounded-full text-lg px-5 py-2'>
+                  Freshly Baked Everyday...
+                </span>
+
                 <h1 className='md:text-7xl/20 text-5xl/14 mt-4 font-bold'>
-                    Tasty Organic <span className='text-orange-500'>Fruits</span > & <span className='text-orange-500'>Veggies</span><br/> In Your City
+                    Delicious<br/><span className='text-rose-500'>Cakes</span> & <span className='text-rose-500'>Pastries</span><br/> Made With Love
                 </h1>
+
                 <p className='text-zinc-600 md:text-lg text-md max-w-[530px] mt-5 mb-10'>
-                    Bred for a high content of beneficial substances. Our products are all fresh and healthy.
+                    Soft, sweet, and handcrafted — our bakery treats are freshly made to bring joy in every bite.
                 </p>
-                <Button content="Shop Now"/>
+
+                <Button content="Order Now"/>
             </div>
 
             {/* Hero Image */}
