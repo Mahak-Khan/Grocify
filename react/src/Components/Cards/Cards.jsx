@@ -9,10 +9,10 @@ const Cards = ({image, name, price}) => {
         {/* Card Icons */}
 
         <div className='flex justify-between'>
-            <span className='text-3xl text-zinc-300'>
+            <span className='text-3xl text-zinc-300 cursor-pointer'>
                 <FaHeart/>
             </span>
-            <button className='bg-gradient-to-b from-orange-400 to-orange-500 text-white text-xl px-4 py-3 rounded-lg'>
+            <button className='bg-linear-to-b from-orange-400 to-orange-500 text-white text-xl px-4 py-3 rounded-lg cursor-pointer'>
                 <FaPlus/>
             </button>
         </div>

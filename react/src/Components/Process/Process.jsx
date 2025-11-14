@@ -13,7 +13,7 @@ const Process = () => {
                 <span className='flex justify-center items-center rounded-full w-18 h-18 mx-auto text-8xl bg-zinc-800 text-white outline-[3px] outline-zinc-800 outline-dashed'>{item.number}</span>
 
                 <div className='flex items-center mt-10 gap-x-5'>
-                    <span className='flex justify-center items-center bg-gradient-to-b from-orange-400 to-orange-500 text-white text-3xl w-15 h-15 rounded-full'>{item.icon}</span>
+                    <span className='flex justify-center items-center bg-linear-to-b from-orange-400 to-orange-500 text-white text-3xl w-15 h-15 rounded-full'>{item.icon}</span>
 
                     <div className='flex-1'>
                         <h4 className='text-zinc-800 text-2xl font-bold'>{item.title}</h4>
