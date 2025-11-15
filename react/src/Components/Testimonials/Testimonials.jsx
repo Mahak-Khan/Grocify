@@ -52,7 +52,7 @@ const Testimonials = () => {
                   <div className='flex gap-5 items-center'>
 
                     <div className='w-16 h-16 rounded-full bg-red-500 outline-2 outline-rose-500 outline-offset-4 overflow-hidden'>
-                      <img src={item.image}  className='w-full h-full'/>
+                      <img src={item.image}  className='w-full h-full object-cover'/>
                     </div>
                     <div>
                       <h5 className='text-xl font-bold'>{item.name}</h5>
@@ -86,40 +86,40 @@ export default Testimonials
 const review = [
   {
     id: 1,
-    name: 'Emily Johnson',
-    profession: 'Food Blogger',
+    name: 'Dhruv Khanger',
+    profession: 'API Wale Bhaiya',
     rating: 5,
     para: 'This bakery has completely elevated my dessert experience! Every pastry is freshly baked, flavorful, and crafted with so much love. Easily my new favorite spot!',
     image: Customer1
   },
   {
     id: 2,
-    name: 'David Smith',
-    profession: 'Chef',
+    name: 'Rinkun',
+    profession: 'JAVA Developer',
     rating: 3,
     para: 'The bread and pastries here are always fresh and perfectly baked. Their croissants are a must-try—flaky, buttery, and absolutely delicious.',
     image: Customer2
   },
   {
     id: 3,
-    name: 'Alya Zahra',
-    profession: 'Model',
+    name: 'Ojha Bhaiya',
+    profession: 'Frontend Developer',
     rating: 3,
     para: 'The cakes and desserts from this bakery are irresistible! Beautifully designed and incredibly tasty. It’s my go-to place for sweet treats.',
     image: Customer3
   },
   {
     id: 4,
-    name: 'Carlos Mendez',
-    profession: 'Fitness Coach',
+    name: 'Vikas',
+    profession: 'Sr. Frontend Developer',
     rating: 4,
     para: 'I love their selection of whole-grain and healthy baked items! Fresh, nutritious, and perfect for my meal plan without compromising on taste.',
     image: Customer4
   },
   {
     id: 5,
-    name: 'Natcha Phongchai',
-    profession: 'Nutritionist',
+    name: 'Meeee😎',
+    profession: 'Intern',
     rating: 2,
     para: 'Their baked goods are always fresh and prepared with quality ingredients. I appreciate their commitment to offering healthier options alongside classic treats.',
     image: Customer5
