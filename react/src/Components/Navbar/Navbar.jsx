@@ -5,9 +5,6 @@ import { IoSearch } from "react-icons/io5";
 import { TbMenu2 } from "react-icons/tb";
 import { useState } from 'react';
 import { TbMenu3 } from "react-icons/tb";
-// import About from '../About/About';
-// import Contact from '../Contact/Contact';
-// import Process from '../Process/Process'
 import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
@@ -83,7 +80,7 @@ const Navbar = () => {
                 {/*Mobile Menu */}
 
                 <ul className={`flex flex-col gap-y-12 bg-rose-500/15 backdrop-blur-xl shadow-xlrounded-xl p-10 items-center gap-x-15 md:hidden absolute top-30 -left-full transform -translate-x-1/2 transition-all duration-500 ${showMenu ? 'left-1/2' : ""}`}>
-                   <NavLink to="/" className={({ isActive }) => `font-semibold tracking-wider ${isActive ? 'text-rose-500' : 'text-zinc-800'} hover:text-rose-500`}>
+                    <NavLink to="/" className={({ isActive }) => `font-semibold tracking-wider ${isActive ? 'text-rose-500' : 'text-zinc-800'} hover:text-rose-500`}>
                         Home
                     </NavLink>
 
