@@ -6,6 +6,9 @@ import Cookies from './Components/Cookies/Cookies'
 import Breads from './Components/Breads/Breads'
 import AllProducts from './Components/AllProducts/AllProducts'
 import Layout from './Components/Layout/Layout'
+import Process from './Components/Process/Process'
+import About from './Components/About/About'
+import Contact from './Components/Contact/Contact'
 
 const App = () => {
 
@@ -34,6 +37,18 @@ const App = () => {
           path: '/AllProducts',
           element: <AllProducts />
         },
+        {
+          path: '/Contact',
+          element: <Contact />
+        },
+        {
+          path: '/Process',
+          element: <Process />
+        },
+        {
+          path: '/About',
+          element: <About />
+        }
       ]
     }
   ])

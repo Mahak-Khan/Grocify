@@ -1,5 +1,5 @@
 import React from 'react'
-import Grocery from '../../Assets/Bakery.png' // change to your bakery hero image
+import Bakery from '../../Assets/Bakery.png' 
 import Button from '../Button/Button'
 
 const Hero = () => {
@@ -28,7 +28,7 @@ const Hero = () => {
             {/* Hero Image */}
 
             <div className='flex-1'>
-                <img src={Grocery} alt="Hero Image" />
+                <img src={Bakery} alt="Hero Image" />
             </div>
 
         </div>
