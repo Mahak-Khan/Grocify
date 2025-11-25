@@ -94,8 +94,14 @@ const Navbar = () => {
                         )}
                     </div>
 
-                    <a href='#' className='text-zinc-800 text-2xl'><GoHeartFill /></a>
-                    <a href='#' className='text-zinc-800 text-2xl'><HiShoppingBag /></a>
+                    <NavLink to="/Wishlist" className="text-zinc-800 text-2xl">
+                        <GoHeartFill />
+                    </NavLink>
+
+                    <NavLink to="/Cart" className="text-zinc-800 text-2xl">
+                        <HiShoppingBag />
+                    </NavLink>
+
 
                     {/* Hamburger */}
                     <a href="#" onClick={toggleMenu} className='text-zinc-800 text-3xl md:hidden'>

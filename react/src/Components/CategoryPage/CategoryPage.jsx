@@ -22,6 +22,7 @@ const CategoryPage = ({ title, bgImage, categories = [] }) => {
   const renderProduct = finalFiltered.map(product => (
     <Cards 
       key={product.id} 
+      id={product.id}            // <-- pass id for wishlist
       image={product.image} 
       name={product.name} 
       price={product.price} 
@@ -32,7 +33,10 @@ const CategoryPage = ({ title, bgImage, categories = [] }) => {
     <div>
       <Banner title={title} bgImage={bgImage} />
       <div className='grid grid-cols-1 md:grid-cols-4 gap-9 py-20 max-w-[1400px] mx-auto px-10'>
-        {renderProduct.length > 0 ? renderProduct : <p className='col-span-full text-center text-zinc-500'>No products found.</p>}
+        {renderProduct.length > 0 
+          ? renderProduct 
+          : <p className='col-span-full text-center text-zinc-500'>No products found.</p>
+        }
       </div>
     </div>
   )

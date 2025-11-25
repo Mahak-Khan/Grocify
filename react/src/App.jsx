@@ -13,6 +13,8 @@ import Contact from './Components/Contact/Contact';
 import Process from './Components/Process/Process';
 import About from './Components/About/About';
 import SearchResults from './Components/SearchResults/SearchResults'; // New page for search
+import WishList from './Components/WishList/WishList';
+import Cart from './Components/Cart/Cart';
 
 const router = createBrowserRouter([
   {
@@ -27,7 +29,9 @@ const router = createBrowserRouter([
       { path: '/Contact', element: <Contact /> },
       { path: '/Process', element: <Process /> },
       { path: '/About', element: <About /> },
-      { path: '/search', element: <SearchResults /> }, // Route for search
+      { path: '/search', element: <SearchResults /> },
+      { path: '/Wishlist', element: <WishList/> },
+      { path: '/Cart', element: <Cart/>}
     ],
   },
 ]);
