@@ -47,12 +47,13 @@ const Navbar = () => {
     setTimeout(() => setAnimateCart(false), 300);
   };
 
-  useEffect(() => {
+ useEffect(() => {
     updateCartCount();
     const sync = () => updateCartCount();
-    window.addEventListener("cartListUpdated", sync);
-    return () => window.removeEventListener("cartListUpdated", sync);
-  }, []);
+    window.addEventListener("cartUpdated", sync); // ✅ fixed
+    return () => window.removeEventListener("cartUpdated", sync);
+}, []);
+
 
   // ----------------- Search Logic -----------------
   const handleSearch = (e) => {
