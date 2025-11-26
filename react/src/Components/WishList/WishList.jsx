@@ -5,7 +5,6 @@ import Cards from '../Cards/Cards';
 const WishList = () => {
   const [items, setItems] = useState([]);
 
-  // Load wishlist from localStorage
   const loadWishlist = () => {
     const stored = JSON.parse(localStorage.getItem("wishlist")) || [];
     setItems(stored);
@@ -13,6 +12,11 @@ const WishList = () => {
 
   useEffect(() => {
     loadWishlist();
+
+    const sync = () => loadWishlist();
+    window.addEventListener("wishlistUpdated", sync);
+
+    return () => window.removeEventListener("wishlistUpdated", sync);
   }, []);
 
   return (
@@ -30,7 +34,7 @@ const WishList = () => {
               image={item.image}
               name={item.name}
               price={item.price}
-              onWishlistChange={loadWishlist} // reload wishlist on toggle
+              onWishlistChange={loadWishlist}
             />
           ))}
         </div>

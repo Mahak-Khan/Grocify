@@ -2,54 +2,89 @@ import React, { useEffect, useState } from 'react';
 import { FaHeart, FaPlus } from 'react-icons/fa';
 import Button from '../Button/Button';
 
-const Cards = ({ id, image, name, price, onWishlistChange }) => {
-  const [added, setAdded] = useState(false);
+const Cards = ({ id, image, name, price, onWishlistChange, onCartChange }) => {
+  const [inWishlist, setInWishlist] = useState(false);
+  const [inCart, setInCart] = useState(false);
 
+  const normalizeId = value => String(value);
+
+  // --- WISHLIST LOGIC ---
   const getWishlist = () => JSON.parse(localStorage.getItem("wishlist")) || [];
 
-  // Check if this item is in wishlist
-  useEffect(() => {
-    if (!id) return;
+  const checkWishlistStatus = () => {
     const wishlist = getWishlist();
-    setAdded(wishlist.some(item => item.id === id));
-  }, [id]);
+    setInWishlist(wishlist.some(item => normalizeId(item.id) === normalizeId(id)));
+  };
 
   const toggleWishlist = () => {
     let wishlist = getWishlist();
-    let updated;
-
-    if (added) {
-      // Remove from wishlist
-      updated = wishlist.filter(item => item.id !== id);
-      setAdded(false);
+    if (inWishlist) {
+      wishlist = wishlist.filter(item => normalizeId(item.id) !== normalizeId(id));
     } else {
-      // Add only if not already in wishlist
-      if (!wishlist.some(item => item.id === id)) {
-        updated = [...wishlist, { id, image, name, price }];
-        setAdded(true);
-      } else {
-        updated = wishlist;
+      if (!wishlist.some(item => normalizeId(item.id) === normalizeId(id))) {
+        wishlist = [...wishlist, { id, image, name, price }];
       }
     }
-
-    localStorage.setItem("wishlist", JSON.stringify(updated));
-
-    // Notify parent to update
+    localStorage.setItem("wishlist", JSON.stringify(wishlist));
+    checkWishlistStatus();
     if (onWishlistChange) onWishlistChange();
+    window.dispatchEvent(new Event("wishlistUpdated"));
   };
+
+  useEffect(() => {
+    checkWishlistStatus();
+    const sync = () => checkWishlistStatus();
+    window.addEventListener("wishlistUpdated", sync);
+    return () => window.removeEventListener("wishlistUpdated", sync);
+  }, [id]);
+
+  // --- CART LOGIC ---
+  const getCart = () => JSON.parse(localStorage.getItem("cart")) || [];
+
+  const checkCartStatus = () => {
+    const cart = getCart();
+    setInCart(cart.some(item => normalizeId(item.id) === normalizeId(id)));
+  };
+
+  const toggleCart = () => {
+    let cart = getCart();
+    if (inCart) {
+      cart = cart.filter(item => normalizeId(item.id) !== normalizeId(id));
+    } else {
+      if (!cart.some(item => normalizeId(item.id) === normalizeId(id))) {
+        cart = [...cart, { id, image, name, price }];
+      }
+    }
+    localStorage.setItem("cart", JSON.stringify(cart));
+    checkCartStatus();
+    if (onCartChange) onCartChange();
+    window.dispatchEvent(new Event("cartUpdated"));
+  };
+
+  useEffect(() => {
+    checkCartStatus();
+    const sync = () => checkCartStatus();
+    window.addEventListener("cartUpdated", sync);
+    return () => window.removeEventListener("cartUpdated", sync);
+  }, [id]);
 
   return (
     <div className='bg-zinc-100 p-5 rounded-xl'>
       <div className='flex justify-between'>
         <span
-          className={`text-3xl cursor-pointer ${added ? "text-rose-500" : "text-zinc-300"}`}
+          className={`text-3xl cursor-pointer ${inWishlist ? "text-rose-500" : "text-zinc-300"}`}
           onClick={toggleWishlist}
         >
           <FaHeart />
         </span>
-        <button className='bg-linear-to-b from-rose-400 to-rose-500 text-white text-xl px-4 py-3 rounded-lg'>
-          <FaPlus />
+
+        <button
+          className='bg-gradient-to-b from-rose-400 to-rose-500 text-white text-xl px-4 py-3 rounded-lg cursor-pointer flex justify-center items-center hover:scale-105 hover:to-rose-600 transition-all duration-300'
+          onClick={toggleCart}
+        >
+          <FaPlus className={`${inCart ? "text-zinc-300" : "text-white"} text-xl`} />
         </button>
+
       </div>
 
       <div className='w-full h-50'>
