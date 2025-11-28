@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { FaHeart, FaPlus } from 'react-icons/fa';
+import { FaHeart } from 'react-icons/fa';
 import Button from '../Button/Button';
 
 const Cards = ({ id, image, name, price, onWishlistChange, onCartChange }) => {
@@ -79,11 +79,14 @@ const Cards = ({ id, image, name, price, onWishlistChange, onCartChange }) => {
         </span>
 
         <button
-          className='bg-gradient-to-b from-rose-400 to-rose-500 text-white text-xl px-4 py-3 rounded-lg cursor-pointer flex justify-center items-center hover:scale-105 hover:to-rose-600 transition-all duration-300'
+          className='bg-gradient-to-b from-rose-400 to-rose-500 text-white text-xl px-3 py-2 rounded-lg cursor-pointer flex justify-center items-center hover:scale-105 hover:to-rose-600 transition-all duration-300'
           onClick={toggleCart}
         >
-          <FaPlus className={`${inCart ? "text-zinc-300" : "text-white"} text-xl`} />
+          <p className={`${inCart ? "text-zinc-300" : "text-white"} text-xl`}>
+            {inCart ? "Remove" : "Add to Cart"}
+          </p>
         </button>
+
 
       </div>
 
