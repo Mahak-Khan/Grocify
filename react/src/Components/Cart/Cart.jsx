@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Heading from '../Heading/Heading';
 import Cards from '../Cards/Cards';
 
+
 const Cart = () => {
   const [addCart, setAddCart] = useState([]);
 
@@ -13,7 +14,7 @@ const Cart = () => {
   useEffect(() => {
     loadCartList();
     const sync = () => loadCartList();
-    window.addEventListener("cartUpdated", sync); // ✅ live update
+    window.addEventListener("cartUpdated", sync);
     return () => window.removeEventListener("cartUpdated", sync);
   }, []);
 
@@ -33,6 +34,7 @@ const Cart = () => {
               name={item.name}
               price={item.price}
               onCartChange={loadCartList}
+              isCartPage={true}   
             />
           ))}
         </div>
